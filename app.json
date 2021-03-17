@@ -1,0 +1,12 @@
+{
+  "name": "Pyxelite",
+  "displayName": "Pyxelite",
+  "expo": {
+    "name": "Pyxelite",
+    "slug": "Pyxelite",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
