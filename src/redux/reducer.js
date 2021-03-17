@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
+import { TOGGLE } from './action';
 
-const placholder = (base = {}, action) => {
-    return base;
-}
+const power = (on = false, action) => action.type === TOGGLE ? !on : on;
 
 export default combineReducers({
-    placholder: placholder,
+    power: power,
 });

@@ -6,10 +6,12 @@ import NavigationBar from 'react-native-navbar-color';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
+import colorScreen from '../screens/colorScreen';
 import homeScreen from '../screens/homeScreen';
+import libraryScreen from '../screens/libraryScreen';
+import settingsScreen from '../screens/settingsScreen';
 
 import { accent, bgColor, white } from '../data/color';
-import colorScreen from '../screens/colorScreen';
 
 const Root = createBottomTabNavigator();
 
@@ -29,6 +31,9 @@ class AppNav extends React.Component {
                     break;
                 case 'Color':
                     name = 'palette';
+                    break;
+                case 'Library':
+                    name = 'text-box-outline';
                     break;
                 default:
                     name = 'empty';
@@ -62,7 +67,8 @@ class AppNav extends React.Component {
                         },
                     }}
                 >
-                    <Root.Screen name='Settings' component={homeScreen} />
+                    <Root.Screen name='Library' component={libraryScreen} />
+                    <Root.Screen name='Settings' component={settingsScreen} />
                     <Root.Screen name='Home' component={homeScreen} />
                     <Root.Screen name='Color' component={colorScreen} />
                 </Root.Navigator>
