@@ -1,23 +1,34 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { StatusBar } from 'react-native';
+import NavigationBar from 'react-native-navbar-color';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
 import homeScreen from '../screens/homeScreen';
 
 import { accent, bgColor, white } from '../data/color';
+import colorScreen from '../screens/colorScreen';
 
 const Root = createBottomTabNavigator();
 
 class AppNav extends React.Component {
 
+    componentDidMount = () => NavigationBar.setColor(bgColor);
+
     tabIcons = ({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
             let name = '';
             switch (route.name) {
+                case 'Settings':
+                    name = 'cog';
+                    break;
                 case 'Home':
                     name = 'home';
+                    break;
+                case 'Color':
+                    name = 'palette';
                     break;
                 default:
                     name = 'empty';
@@ -34,6 +45,7 @@ class AppNav extends React.Component {
     render() {
         return (
             <NavigationContainer>
+                <StatusBar backgroundColor={bgColor} />
                 <Root.Navigator
                     initialRouteName='Home'
                     screenOptions={this.tabIcons}
@@ -50,7 +62,9 @@ class AppNav extends React.Component {
                         },
                     }}
                 >
+                    <Root.Screen name='Settings' component={homeScreen} />
                     <Root.Screen name='Home' component={homeScreen} />
+                    <Root.Screen name='Color' component={colorScreen} />
                 </Root.Navigator>
             </NavigationContainer>
         );
