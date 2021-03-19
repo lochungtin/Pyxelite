@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { bgColor, white } from './data/color';
+import { bgColor, darkGrey, white } from './data/color';
 
 export const generalStyles = StyleSheet.create({
     screen: {
@@ -9,6 +9,54 @@ export const generalStyles = StyleSheet.create({
         flex: 1,
     }
 })
+
+export const colorScreenStyles = StyleSheet.create({
+    hexInput: {
+        color: white,
+        fontSize: 20,
+        textAlign: 'center',
+        width: 100
+    },
+    hexPreview: {
+        alignItems: 'center',
+        backgroundColor: darkGrey,
+        borderRadius: 10, 
+        display: 'flex',
+        justifyContent: 'center',
+        height: 50,
+        marginBottom: 20,
+        width: 350,
+    },
+    preview: {
+        borderRadius: 10,
+        marginVertical: 30,
+        height: 300,
+        width: 350,
+    },
+    slider: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        width: 32,
+    },
+    sliderContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: 300,
+    },
+    sliderText: {
+        color: white,
+        backgroundColor: darkGrey,
+        borderRadius: 5,
+        height: 30,
+        marginBottom: 10,
+        paddingTop: 4,
+        textAlign: 'center',
+        width: 32,
+    }
+});
 
 export const homeScreenStyles = StyleSheet.create({
     bullet: {
