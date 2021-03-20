@@ -1,4 +1,4 @@
-const format = num => (parseInt(num, 16) > 9 ? '' : '0') + num;
+const format = num => (parseInt(num, 16) > 15 ? '' : '0') + num;
 
 export const ints2hex = (r, g, b) => (format(r.toString(16)) + format(g.toString(16)) + format(b.toString(16))).toUpperCase();
 
@@ -16,5 +16,5 @@ export const rand = () => {
     const r = Math.floor(Math.random() * 1000) % 256;
     const g = Math.floor(Math.random() * 1000) % 256;
     const b = Math.floor(Math.random() * 1000) % 256;
-    return [r, g, b];
+    return [format(r), format(g), format(b)];
 }

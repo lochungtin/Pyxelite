@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { bgColor, darkGrey, white } from './data/color';
+import { bgColor, darkGrey, grey, white } from './data/color';
 
 export const generalStyles = StyleSheet.create({
     screen: {
@@ -15,22 +15,33 @@ export const colorScreenStyles = StyleSheet.create({
         color: white,
         fontSize: 20,
         textAlign: 'center',
-        width: 100
+        width: 275
     },
     hexPreview: {
         alignItems: 'center',
         backgroundColor: darkGrey,
-        borderRadius: 10, 
+        borderBottomWidth: 3,
+        borderColor: grey,
+        borderRadius: 25, 
+        borderRightWidth: 3,
         display: 'flex',
         justifyContent: 'center',
         height: 50,
+        width: 275,
+    }, 
+    inputContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        height: 55,
+        justifyContent: 'space-between',
         marginBottom: 20,
         width: 350,
     },
     preview: {
         borderRadius: 10,
         marginVertical: 30,
-        height: 300,
+        height: 200,
         width: 350,
     },
     slider: {
@@ -49,23 +60,29 @@ export const colorScreenStyles = StyleSheet.create({
     sliderText: {
         color: white,
         backgroundColor: darkGrey,
-        borderRadius: 5,
+        borderBottomWidth: 2,
+        borderColor: grey,
+        borderRadius: 5, 
+        borderRightWidth: 2,
         height: 30,
         marginBottom: 10,
         paddingTop: 4,
         textAlign: 'center',
         width: 32,
+    },
+    switch: {
+        marginRight: 10,
     }
 });
 
 export const homeScreenStyles = StyleSheet.create({
     bullet: {
         alignItems: 'center',
-        backgroundColor: '#1e1e1e',
-        borderColor: '#3e3e3e',
+        backgroundColor: darkGrey,
         borderBottomWidth: 3,
-        borderRightWidth: 3,
+        borderColor: grey,
         borderRadius: 25,
+        borderRightWidth: 3,
         display: 'flex',
         flexDirection: 'row',
         height: 50,
@@ -89,7 +106,7 @@ export const homeScreenStyles = StyleSheet.create({
     },
     toggleBtn: {
         alignItems: 'center',
-        backgroundColor: '#1e1e1e',
+        backgroundColor: darkGrey,
         borderRadius: 37.5,
         display: 'flex',
         height: 75,

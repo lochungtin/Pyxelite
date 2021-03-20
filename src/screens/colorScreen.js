@@ -1,8 +1,9 @@
 import React from 'react';
-import { TextInput, View, } from 'react-native';
+import { Switch, TextInput, View, } from 'react-native';
 import { connect } from 'react-redux';
 
 import ColorSlider from '../components/ColorSlider';
+import { darkGrey, grey, white } from '../data/color';
 
 import { colorScreenStyles, generalStyles } from '../styles';
 import { hex2Ints, ints2hex, mix, rand } from '../utils/color';
@@ -15,7 +16,7 @@ class Screen extends React.Component {
         const randomColor = rand();
 
         this.state = {
-            bg: 'b',
+            black: 'b',
             hex: ints2hex(randomColor[0], randomColor[1], randomColor[2]),
             r: randomColor[0],
             g: randomColor[1],
@@ -25,7 +26,7 @@ class Screen extends React.Component {
     }
 
     handleSliderA = val => {
-        const bg = this.state.bg === 'b' ? [0, 0, 0] : [255, 255, 255];
+        const bg = this.state.black ? [0, 0, 0] : [255, 255, 255];
         const mixed = mix(
             this.state.r,
             this.state.g,
@@ -39,7 +40,7 @@ class Screen extends React.Component {
     }
 
     handleSliderB = b => {
-        const bg = this.state.bg === 'b' ? [0, 0, 0] : [255, 255, 255];
+        const bg = this.state.black ? [0, 0, 0] : [255, 255, 255];
         const mixed = mix(
             this.state.r,
             this.state.g,
@@ -53,7 +54,7 @@ class Screen extends React.Component {
     }
 
     handleSliderG = g => {
-        const bg = this.state.bg === 'b' ? [0, 0, 0] : [255, 255, 255];
+        const bg = this.state.black ? [0, 0, 0] : [255, 255, 255];
         const mixed = mix(
             this.state.r,
             g,
@@ -67,7 +68,7 @@ class Screen extends React.Component {
     }
 
     handleSliderR = r => {
-        const bg = this.state.bg === 'b' ? [0, 0, 0] : [255, 255, 255];
+        const bg = this.state.black ? [0, 0, 0] : [255, 255, 255];
         const mixed = mix(
             r,
             this.state.g,
@@ -99,13 +100,22 @@ class Screen extends React.Component {
     render() {
         return (
             <View style={generalStyles.screen}>
-                <View style={{ ...colorScreenStyles.preview, backgroundColor: '#' + this.state.hex }} />
-                <View style={colorScreenStyles.hexPreview}>
-                    <TextInput
-                        onChangeText={this.handleTextInput}
-                        maxLength={6}
-                        value={this.state.hex}
-                        style={colorScreenStyles.hexInput}
+                <View style={{ ...colorScreenStyles.preview, backgroundColor: '#' + (this.state.hex.length === 6 ? this.state.hex : "333") }} />
+                <View style={colorScreenStyles.inputContainer}>
+                    <View style={colorScreenStyles.hexPreview}>
+                        <TextInput
+                            onChangeText={this.handleTextInput}
+                            maxLength={6}
+                            value={this.state.hex}
+                            style={colorScreenStyles.hexInput}
+                        />
+                    </View>
+                    <Switch
+                        onValueChange={() => this.setState({ black: !this.state.black })}
+                        style={colorScreenStyles.switch}
+                        trackColor={{ false: grey, true: grey }}
+                        thumbColor={white}
+                        value={!this.state.black}
                     />
                 </View>
                 <View style={colorScreenStyles.sliderContainer}>

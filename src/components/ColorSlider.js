@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, } from 'react-native';
 import VerticalSlider from 'rn-vertical-slider';
 
-import { accent, darkGrey, white } from '../data/color';
+import { accent, darkGrey, grey, white } from '../data/color';
 import { colorScreenStyles } from '../styles';
 
 export default class ColorSlider extends React.Component {
@@ -17,7 +17,7 @@ export default class ColorSlider extends React.Component {
                     height={275}
                     maximumTrackTintColor={darkGrey}
                     max={this.props.max || 255}
-                    minimumTrackTintColor={'#3e3e3e'}
+                    minimumTrackTintColor={grey}
                     min={0}
                     onChange={this.props.onValueChange}
                     step={1}
