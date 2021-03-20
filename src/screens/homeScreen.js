@@ -8,8 +8,8 @@ import Logo from '../components/Logo';
 import { toggle } from '../redux/action';
 import { store } from '../redux/store';
 
-import { accent, white } from '../data/color';
-import { generalStyles, homeScreenStyles } from '../styles';
+import { accent, white, } from '../data/color';
+import { generalStyles, homeScreenStyles, } from '../styles';
 
 
 class Screen extends React.Component {

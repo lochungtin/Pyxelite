@@ -8,44 +8,42 @@ const activityInit = {
     action: 'test',
     color: accent.substring(1),
 }
-const activity = (activity = activityInit, action) => {
+const updateActivity = (activity = activityInit, action) => {
     let update = { ...activity };
     switch (action.type) {
         case SET_ACTIVE_COLOR:
             update.color = action.payload;
-            break;
+            return update;
 
         case SET_ACTIVE_ACTION:
             update.action = action.payload;
-            break;
+            return update;
 
         default:
-            break;
+            return update;
     }
-    return update;
 }
 
-const library = (library = [], action) => {
+const updateLibrary = (library = [], action) => {
     let update = [...library];
     switch (action.type) {
         case ADD_COLOR:
             update.push(action.payload);
-            break;
+            return update;
 
         case DELETE_COLOR:
             update.splice(update.indexOf(action.payload), 1);
-            break;
+            return update;
 
         default:
-            break;
+            return update;
     }
-    return update;
 }
 
 const power = (on = false, action) => action.type === TOGGLE ? !on : on;
 
 export default combineReducers({
-    activity: activity,
-    library: library,
+    activity: updateActivity,
+    library: updateLibrary,
     power: power,
 });
