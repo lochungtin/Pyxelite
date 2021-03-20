@@ -16,5 +16,5 @@ export const rand = () => {
     const r = Math.floor(Math.random() * 1000) % 256;
     const g = Math.floor(Math.random() * 1000) % 256;
     const b = Math.floor(Math.random() * 1000) % 256;
-    return [format(r), format(g), format(b)];
+    return [r, g, b];
 }

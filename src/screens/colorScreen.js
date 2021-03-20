@@ -23,6 +23,9 @@ class Screen extends React.Component {
             b: randomColor[2],
             a: 100,
         }
+
+        console.log(randomColor)
+        console.log(ints2hex(randomColor[0], randomColor[1], randomColor[2]));
     }
 
     handleSliderA = val => {
@@ -81,6 +84,20 @@ class Screen extends React.Component {
         this.setState({ r, hex: ints2hex(mixed[0], mixed[1], mixed[2]) });
     }
 
+    handleSwitch = black => {
+        const bg = black ? [0, 0, 0] : [255, 255, 255];
+        const mixed = mix(
+            this.state.r,
+            this.state.g,
+            this.state.b,
+            bg[0],
+            bg[1],
+            bg[2],
+            this.state.a / 100,
+        );
+        this.setState({ hex: ints2hex(mixed[0], mixed[1], mixed[2]), black });
+    }
+
     handleTextInput = hex => {
         if (hex.length > this.state.hex.length) {
             const rgx = /[0-9A-F]/;
@@ -111,11 +128,11 @@ class Screen extends React.Component {
                         />
                     </View>
                     <Switch
-                        onValueChange={() => this.setState({ black: !this.state.black })}
+                        onValueChange={this.handleSwitch}
                         style={colorScreenStyles.switch}
                         trackColor={{ false: grey, true: grey }}
                         thumbColor={white}
-                        value={!this.state.black}
+                        value={this.state.black}
                     />
                 </View>
                 <View style={colorScreenStyles.sliderContainer}>
