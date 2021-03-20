@@ -12,7 +12,7 @@ const updateActivity = (activity = activityInit, action) => {
     let update = { ...activity };
     switch (action.type) {
         case SET_ACTIVE_COLOR:
-            update.color = action.payload;
+            update['color'] = action.payload;
             return update;
 
         case SET_ACTIVE_ACTION:
@@ -20,7 +20,7 @@ const updateActivity = (activity = activityInit, action) => {
             return update;
 
         default:
-            return update;
+            return activity;
     }
 }
 
@@ -36,14 +36,14 @@ const updateLibrary = (library = [], action) => {
             return update;
 
         default:
-            return update;
+            return library;
     }
 }
 
-const power = (on = false, action) => action.type === TOGGLE ? !on : on;
+const updatePower = (on = false, action) => action.type === TOGGLE ? !on : on;
 
 export default combineReducers({
     activity: updateActivity,
     library: updateLibrary,
-    power: power,
+    power: updatePower,
 });
