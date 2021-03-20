@@ -18,9 +18,10 @@ class Screen extends React.Component {
             <View style={{ ...generalStyles.screen, ...homeScreenStyles.screen }}>
                 <Logo dim={250} style={homeScreenStyles.logo} />
                 <DisplayItem
+                    color={'#' + this.props.activity.color}
                     icon={'circle'}
                     title={'COLOR'}
-                    value={'test'}
+                    value={'#' + this.props.activity.color}
                 />
                 <DisplayItem
                     color={white}
@@ -47,6 +48,7 @@ class Screen extends React.Component {
 }
 
 const mapStateToProps = state => ({
+    activity: state.activity,
     power: state.power,
 });
 

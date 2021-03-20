@@ -1,12 +1,15 @@
 import React from 'react';
-import { Switch, TextInput, View, } from 'react-native';
+import { Switch, Text, TextInput, TouchableOpacity, View, } from 'react-native';
+import { showMessage } from "react-native-flash-message";
 import { connect } from 'react-redux';
 
 import ColorSlider from '../components/ColorSlider';
-import { darkGrey, grey, white } from '../data/color';
+import { grey, white, } from '../data/color';
+import { addColor, setActiveColor } from '../redux/action';
+import { store } from '../redux/store';
 
-import { colorScreenStyles, generalStyles } from '../styles';
-import { hex2Ints, ints2hex, mix, rand } from '../utils/color';
+import { colorScreenStyles, generalStyles, } from '../styles';
+import { hex2Ints, ints2hex, mix, rand, } from '../utils/color';
 
 class Screen extends React.Component {
 
@@ -16,16 +19,13 @@ class Screen extends React.Component {
         const randomColor = rand();
 
         this.state = {
-            black: 'b',
+            black: false,
             hex: ints2hex(randomColor[0], randomColor[1], randomColor[2]),
             r: randomColor[0],
             g: randomColor[1],
             b: randomColor[2],
             a: 100,
         }
-
-        console.log(randomColor)
-        console.log(ints2hex(randomColor[0], randomColor[1], randomColor[2]));
     }
 
     handleSliderA = val => {
@@ -114,10 +114,42 @@ class Screen extends React.Component {
         }
     }
 
+    randomColor = () => {
+        const randomColor = rand();
+        this.setState({
+            hex: ints2hex(randomColor[0], randomColor[1], randomColor[2]),
+            r: randomColor[0],
+            g: randomColor[1],
+            b: randomColor[2],
+            a: 100,
+        })
+    }
+
+    save = () => {
+        if (this.state.hex.length !== 6) {
+            showMessage({
+                message: 'HEX code is not valid',
+                type: 'danger',
+            });
+            return false;
+        }
+
+        store.dispatch(addColor(this.state.hex));
+        return true;
+    }
+
+    set = () => {
+        if (this.save())
+            store.dispatch(setActiveColor(this.state.hex));
+    }
+
     render() {
         return (
             <View style={generalStyles.screen}>
-                <View style={{ ...colorScreenStyles.preview, backgroundColor: '#' + (this.state.hex.length === 6 ? this.state.hex : "333") }} />
+                <TouchableOpacity
+                    onPress={this.randomColor}
+                    style={{ ...colorScreenStyles.preview, backgroundColor: '#' + (this.state.hex.length === 6 ? this.state.hex : "333") }}
+                />
                 <View style={colorScreenStyles.inputContainer}>
                     <View style={colorScreenStyles.hexPreview}>
                         <TextInput
@@ -154,13 +186,31 @@ class Screen extends React.Component {
                         value={this.state.a}
                     />
                 </View>
+                <View style={colorScreenStyles.actionContainer}>
+                    <TouchableOpacity
+                        onPress={this.set}
+                        style={colorScreenStyles.actionSet}
+                    >
+                        <Text style={colorScreenStyles.actionText}>
+                            Save and Apply
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={this.save}
+                        style={colorScreenStyles.actionSave}
+                    >
+                        <Text style={colorScreenStyles.actionText}>
+                            Save
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
 }
 
 const mapStateToProps = state => ({
-
+    library: state.library,
 });
 
 export default connect(mapStateToProps)(Screen);

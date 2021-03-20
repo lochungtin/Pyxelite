@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { bgColor, darkGrey, grey, white } from './data/color';
+import { accent, bgColor, darkGrey, grey, lightGrey, white } from './data/color';
 
 export const generalStyles = StyleSheet.create({
     screen: {
@@ -11,6 +11,42 @@ export const generalStyles = StyleSheet.create({
 })
 
 export const colorScreenStyles = StyleSheet.create({
+    actionContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginTop: 30,
+        width: 350,
+    },
+    actionSave: {
+        alignItems: 'center',
+        backgroundColor: grey,
+        borderBottomWidth: 3,
+        borderColor: lightGrey,
+        borderRadius: 25, 
+        borderRightWidth: 3,
+        display: 'flex',
+        justifyContent: 'center',
+        height: 50,
+        width: 100,
+    },
+    actionSet: {
+        alignItems: 'center',
+        backgroundColor: accent,
+        borderBottomWidth: 3,
+        borderColor: lightGrey,
+        borderRadius: 25, 
+        borderRightWidth: 3,
+        display: 'flex',
+        justifyContent: 'center',
+        height: 50,
+        width: 200,
+    },
+    actionText: {
+        color: white,
+        fontSize: 15,
+    },
     hexInput: {
         color: white,
         fontSize: 20,

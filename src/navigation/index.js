@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { StatusBar } from 'react-native';
+import FlashMessage from "react-native-flash-message";
 import NavigationBar from 'react-native-navbar-color';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
@@ -72,6 +73,7 @@ class AppNav extends React.Component {
                     <Root.Screen name='Home' component={homeScreen} />
                     <Root.Screen name='Color' component={colorScreen} />
                 </Root.Navigator>
+                <FlashMessage position='top'/>
             </NavigationContainer>
         );
     }
