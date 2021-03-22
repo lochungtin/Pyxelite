@@ -12,7 +12,7 @@ const updateActivity = (activity = activityInit, action) => {
     let update = { ...activity };
     switch (action.type) {
         case SET_ACTIVE_COLOR:
-            update['color'] = action.payload;
+            update.color = action.payload;
             return update;
 
         case SET_ACTIVE_ACTION:

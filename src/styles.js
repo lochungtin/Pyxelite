@@ -76,7 +76,8 @@ export const colorScreenStyles = StyleSheet.create({
     },
     preview: {
         borderRadius: 10,
-        marginVertical: 30,
+        marginBottom: 30,
+        marginTop: 70,
         height: 200,
         width: 350,
     },
@@ -149,5 +150,65 @@ export const homeScreenStyles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 20,
         width: 75,
+    },
+});
+
+export const libraryScreenStyles = StyleSheet.create({
+    bullet: {
+        alignItems: 'center',
+        display: 'flex',
+        backgroundColor: darkGrey,
+        borderBottomWidth: 3,
+        borderColor: grey,
+        borderRadius: 25,
+        borderRightWidth: 3,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        height: 50,
+        width: 275,
+    },
+    button: {
+        alignItems: 'center',
+        display: 'flex',
+        backgroundColor: darkGrey,
+        borderRadius: 20,
+        height: 40,
+        justifyContent: 'center',
+        width: 40,
+    },
+    colorLabel: {
+        borderRadius: 10,
+        height: 20,
+        marginLeft: 20,
+        width: 80,
+    },
+    colorText: {
+        color: lightGrey,
+        marginRight: 60,
+    },
+    itemContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 15,
+        width: 390,
+    },
+    headerText: {
+        color: white,
+        fontSize: 20
+    },
+    scrollView: {
+        height: 500,
+        width: 390,
+    },
+    selectionPanel: {
+        alignItems: 'center',
+        backgroundColor: darkGrey,
+        display: 'flex',
+        marginTop: 50,
+        height: 60,
+        justifyContent: 'center',
+        width: '100%',
     },
 });
