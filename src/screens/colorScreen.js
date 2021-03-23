@@ -3,7 +3,7 @@ import { Switch, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { showMessage } from "react-native-flash-message";
 import { connect } from 'react-redux';
 
-import ColorSlider from '../components/ColorSlider';
+import ColorSlider from '../components/Slider';
 import { grey, white, } from '../data/color';
 import { addColor, setActiveColor } from '../redux/action';
 import { store } from '../redux/store';

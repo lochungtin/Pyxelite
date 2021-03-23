@@ -26,3 +26,15 @@ export const setActiveAction = payload => ({
     type: SET_ACTIVE_ACTION,
     payload,
 });
+
+export const UPDATE_BRIGHTNESS = 'UPDATE_BRIGHTNESS';
+export const updateBrightness = payload => ({
+    type: UPDATE_BRIGHTNESS,
+    payload,
+});
+
+export const UPDATE_SPEED = 'UPDATE_SPEED';
+export const updateSpeed = payload => ({
+    type: UPDATE_SPEED,
+    payload,
+});

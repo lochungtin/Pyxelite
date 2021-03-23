@@ -26,7 +26,7 @@ class Screen extends React.Component {
                 <View />
                 <View style={libraryScreenStyles.selectionPanel}>
                     <Text style={libraryScreenStyles.headerText}>
-                        Color Library
+                        COLOR LIBRARY
                     </Text>
                 </View>
                 <ScrollView style={libraryScreenStyles.scrollView}>

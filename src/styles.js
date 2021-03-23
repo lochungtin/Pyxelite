@@ -2,10 +2,33 @@ import { StyleSheet } from 'react-native';
 
 import { accent, bgColor, darkGrey, grey, lightGrey, white } from './data/color';
 
+export const sliderStyles = StyleSheet.create({
+    slider: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        width: 40,
+    },
+    sliderText: {
+        color: white,
+        backgroundColor: darkGrey,
+        borderBottomWidth: 2,
+        borderColor: grey,
+        borderRadius: 10,
+        borderRightWidth: 2,
+        height: 30,
+        marginBottom: 10,
+        paddingTop: 4,
+        textAlign: 'center',
+        width: 40,
+    },
+});
+
 export const generalStyles = StyleSheet.create({
     screen: {
         alignItems: 'center',
         backgroundColor: bgColor,
+        display: 'flex',
         flex: 1,
     }
 })
@@ -16,6 +39,7 @@ export const colorScreenStyles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
+        marginBottom: 20,
         marginTop: 30,
         width: 350,
     },
@@ -24,7 +48,7 @@ export const colorScreenStyles = StyleSheet.create({
         backgroundColor: grey,
         borderBottomWidth: 3,
         borderColor: lightGrey,
-        borderRadius: 25, 
+        borderRadius: 25,
         borderRightWidth: 3,
         display: 'flex',
         justifyContent: 'center',
@@ -36,7 +60,7 @@ export const colorScreenStyles = StyleSheet.create({
         backgroundColor: accent,
         borderBottomWidth: 3,
         borderColor: lightGrey,
-        borderRadius: 25, 
+        borderRadius: 25,
         borderRightWidth: 3,
         display: 'flex',
         justifyContent: 'center',
@@ -58,13 +82,13 @@ export const colorScreenStyles = StyleSheet.create({
         backgroundColor: darkGrey,
         borderBottomWidth: 3,
         borderColor: grey,
-        borderRadius: 25, 
+        borderRadius: 25,
         borderRightWidth: 3,
         display: 'flex',
         justifyContent: 'center',
         height: 50,
         width: 275,
-    }, 
+    },
     inputContainer: {
         alignItems: 'center',
         display: 'flex',
@@ -82,31 +106,12 @@ export const colorScreenStyles = StyleSheet.create({
         marginTop: 70,
         width: 350,
     },
-    slider: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        width: 32,
-    },
     sliderContainer: {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: 300,
-    },
-    sliderText: {
-        color: white,
-        backgroundColor: darkGrey,
-        borderBottomWidth: 2,
-        borderColor: grey,
-        borderRadius: 5, 
-        borderRightWidth: 2,
-        height: 30,
-        marginBottom: 10,
-        paddingTop: 4,
-        textAlign: 'center',
-        width: 32,
     },
     switch: {
         marginRight: 10,
@@ -173,9 +178,9 @@ export const libraryScreenStyles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        display: 'flex',
         backgroundColor: darkGrey,
         borderRadius: 20,
+        display: 'flex',
         height: 40,
         justifyContent: 'center',
         width: 40,
@@ -215,5 +220,48 @@ export const libraryScreenStyles = StyleSheet.create({
         height: 60,
         justifyContent: 'center',
         width: '100%',
+    },
+});
+
+export const settingsScreenStyles = StyleSheet.create({
+    planBullet: {
+        alignItems: 'center',
+        backgroundColor: darkGrey,
+        borderBottomWidth: 3,
+        borderColor: grey,
+        borderRadius: 25,
+        borderRightWidth: 3,
+        display: 'flex',
+        flexDirection: 'row',
+        height: 50,
+        justifyContent: 'space-around',
+        width: 300,
+    },
+    planBtn: {
+        alignItems: 'center',
+        backgroundColor: darkGrey,
+        borderRadius: 20,
+        display: 'flex',
+        height: 40,
+        justifyContent: 'center',
+        width: 40,
+    },
+    planContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 20,
+        width: 360,
+    },
+    planText: {
+        color: white,
+        width: 180
+    },
+    sliderContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
     },
 });

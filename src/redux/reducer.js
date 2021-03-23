@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COLOR, DELETE_COLOR, SET_ACTIVE_ACTION, SET_ACTIVE_COLOR, TOGGLE, } from './action';
+import { ADD_COLOR, DELETE_COLOR, SET_ACTIVE_ACTION, SET_ACTIVE_COLOR, TOGGLE, UPDATE_BRIGHTNESS, UPDATE_SPEED, } from './action';
 
 import { accent } from '../data/color';
 
@@ -42,8 +42,29 @@ const updateLibrary = (library = [], action) => {
 
 const updatePower = (on = false, action) => action.type === TOGGLE ? !on : on;
 
+const settingsInit = {
+    brightness: 200,
+    speed: 50,
+}
+const updateSettings = (settings = settingsInit, action) => {
+    let update = {...settings};
+    switch (action.type) {
+        case UPDATE_BRIGHTNESS:
+            update.brightness = action.payload;
+            return update;
+
+        case UPDATE_SPEED:
+            update.speed = action.payload;
+            return update;
+
+        default:
+            return settings;
+    }
+}
+
 export default combineReducers({
     activity: updateActivity,
     library: updateLibrary,
     power: updatePower,
+    settings: updateSettings,
 });

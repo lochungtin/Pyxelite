@@ -2,18 +2,18 @@ import React from 'react';
 import { Text, View, } from 'react-native';
 import VerticalSlider from 'rn-vertical-slider';
 
-import { accent, darkGrey, grey, white } from '../data/color';
-import { colorScreenStyles } from '../styles';
+import { darkGrey, grey, } from '../data/color';
+import { sliderStyles } from '../styles';
 
-export default class ColorSlider extends React.Component {
+export default class Slider extends React.Component {
     render() {
         return (
-            <View style={colorScreenStyles.slider}>
-                <Text style={colorScreenStyles.sliderText}>
+            <View style={sliderStyles.slider}>
+                <Text style={sliderStyles.sliderText}>
                     {this.props.value}
                 </Text>
                 <VerticalSlider
-                    borderRadius={5}
+                    borderRadius={10}
                     height={275}
                     maximumTrackTintColor={darkGrey}
                     max={this.props.max || 255}
@@ -22,7 +22,7 @@ export default class ColorSlider extends React.Component {
                     onChange={this.props.onValueChange}
                     step={1}
                     value={this.props.value}
-                    width={32}
+                    width={40}
                 />
             </View>
         );
