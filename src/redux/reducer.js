@@ -4,28 +4,38 @@ import {
     ADD_COLOR,
     DELETE_COLOR,
     SET_ACTIVE_ACTION,
+    SET_ACTIVE_BRIGHTNESS,
     SET_ACTIVE_COLOR,
+    SET_ACTIVE_SPEED,
     SET_PRESET,
     TOGGLE,
-    UPDATE_BRIGHTNESS,
-    UPDATE_SPEED,
 } from './action';
 
 import { accent } from '../data/color';
 
 const activityInit = {
     action: 'static',
+    brightness: 200,
     color: accent.substring(1),
+    speed: 50,
 }
 const updateActivity = (activity = activityInit, action) => {
     let update = { ...activity };
     switch (action.type) {
+        case SET_ACTIVE_ACTION:
+            update.action = action.payload;
+            return update;
+
+        case SET_ACTIVE_BRIGHTNESS:
+            update.brightness = action.payload;
+            return update;
+
         case SET_ACTIVE_COLOR:
             update.color = action.payload;
             return update;
 
-        case SET_ACTIVE_ACTION:
-            update.action = action.payload;
+        case SET_ACTIVE_SPEED:
+            update.speed = action.payload;
             return update;
 
         default:
@@ -53,19 +63,19 @@ const updatePower = (on = false, action) => action.type === TOGGLE ? !on : on;
 
 const presetInit = [
     {
-        name: 'Preset 1',
+        action: 'static',
         color: accent,
         speed: 50,
         brightness: 200,
     },
     {
-        name: 'Preset 2',
+        action: 'breathe',
         color: accent,
         speed: 50,
         brightness: 200,
     },
     {
-        name: 'Preset 3',
+        action: 'wave',
         color: accent,
         speed: 50,
         brightness: 200,
@@ -74,30 +84,10 @@ const presetInit = [
 const updatePreset = (preset = presetInit, action) => {
     let update = [...preset];
     if (action.type === SET_PRESET) {
-        update[action.payload.num] = action.payload.preset;
+        update[action.payload.num] = action.payload.data;
         return update;
     }
     return preset
-}
-
-const settingsInit = {
-    brightness: 200,
-    speed: 50,
-}
-const updateSettings = (settings = settingsInit, action) => {
-    let update = { ...settings };
-    switch (action.type) {
-        case UPDATE_BRIGHTNESS:
-            update.brightness = action.payload;
-            return update;
-
-        case UPDATE_SPEED:
-            update.speed = action.payload;
-            return update;
-
-        default:
-            return settings;
-    }
 }
 
 export default combineReducers({
@@ -105,5 +95,4 @@ export default combineReducers({
     library: updateLibrary,
     power: updatePower,
     preset: updatePreset,
-    settings: updateSettings,
 });

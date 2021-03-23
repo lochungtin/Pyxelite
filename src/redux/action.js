@@ -33,14 +33,14 @@ export const setPreset = payload => ({
     payload,
 });
 
-export const UPDATE_BRIGHTNESS = 'UPDATE_BRIGHTNESS';
-export const updateBrightness = payload => ({
-    type: UPDATE_BRIGHTNESS,
+export const SET_ACTIVE_BRIGHTNESS = 'SET_ACTIVE_BRIGHTNESS';
+export const setActiveBrightness = payload => ({
+    type: SET_ACTIVE_BRIGHTNESS,
     payload,
 });
 
-export const UPDATE_SPEED = 'UPDATE_SPEED';
-export const updateSpeed = payload => ({
-    type: UPDATE_SPEED,
+export const SET_ACTIVE_SPEED = 'SET_ACTIVE_SPEED';
+export const setActiveSpeed = payload => ({
+    type: SET_ACTIVE_SPEED,
     payload,
 });

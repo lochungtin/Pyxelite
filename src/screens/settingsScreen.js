@@ -6,28 +6,32 @@ import { connect } from 'react-redux';
 import Bubble from '../components/Bubble';
 import Bullet from '../components/Bullet';
 import Slider from '../components/Slider';
-import { setActiveAction, updateBrightness, updateSpeed } from '../redux/action';
+import { setActiveAction, setActiveBrightness, setActiveSpeed, setPreset, } from '../redux/action';
 import { store } from '../redux/store';
 
 import { generalStyles, settingsScreenStyles, } from '../styles';
 
 import { accent, white } from '../data/color';
 import { plans } from '../data/plan';
-import { stretch } from '../utils/text';
 import { RNKey } from '../utils/randomKey';
+import { stretch } from '../utils/text';
 
 class Screen extends React.Component {
 
     handleBrightness = val => {
-        store.dispatch(updateBrightness(val));
+        store.dispatch(setActiveBrightness(val));
     }
 
     handleSpeed = val => {
-        store.dispatch(updateSpeed(val));
+        store.dispatch(setActiveSpeed(val));
+    }
+
+    savePreset = (num, data) => {
+        store.dispatch(setPreset({ num, data }));
     }
 
     setAction = action => {
-        store.dispatch(setActiveAction(action))
+        store.dispatch(setActiveAction(action));
     }
 
     render() {
@@ -54,14 +58,14 @@ class Screen extends React.Component {
                 </View>
                 <View style={settingsScreenStyles.bottomControls}>
                     <View style={settingsScreenStyles.presetContainer}>
-                        {this.props.preset.map(data => {
+                        {this.props.preset.map((data, index) => {
                             return (
                                 <View key={RNKey()} style={settingsScreenStyles.presetInnerContainer}>
                                     <TouchableOpacity style={settingsScreenStyles.presetItem}>
-                                        <View style={{ ...settingsScreenStyles.presetColorbar, backgroundColor: data.color }} />
+                                        <View style={{ ...settingsScreenStyles.presetColorbar, backgroundColor: '#' + data.color }} />
                                         <View style={settingsScreenStyles.presetTextContainer}>
                                             <Text style={settingsScreenStyles.presetText}>
-                                                {data.name}
+                                                {data.action.toUpperCase()}
                                             </Text>
                                             <Text style={settingsScreenStyles.presetText}>
                                                 {'S:  ' + data.speed}
@@ -71,7 +75,7 @@ class Screen extends React.Component {
                                             </Text>
                                         </View>
                                     </TouchableOpacity>
-                                    <TouchableOpacity style={settingsScreenStyles.presetBtn}>
+                                    <TouchableOpacity onPress={() => this.savePreset(index, this.props.activity)} style={settingsScreenStyles.presetBtn}>
                                         <Icon
                                             color={white}
                                             name={'chevron-left'}
@@ -87,7 +91,7 @@ class Screen extends React.Component {
                             <Slider
                                 max={100}
                                 onValueChange={this.handleSpeed}
-                                value={this.props.settings.speed}
+                                value={this.props.activity.speed}
                             />
                             <Text style={settingsScreenStyles.verticalText}>
                                 {stretch('MOTION SPEED', 2)}
@@ -96,7 +100,7 @@ class Screen extends React.Component {
                         <View style={settingsScreenStyles.slider}>
                             <Slider
                                 onValueChange={this.handleBrightness}
-                                value={this.props.settings.brightness}
+                                value={this.props.activity.brightness}
                             />
                             <Text style={settingsScreenStyles.verticalText}>
                                 {stretch('BRIGHTNESS', 2)}
@@ -112,7 +116,6 @@ class Screen extends React.Component {
 const mapStateToProps = state => ({
     activity: state.activity,
     preset: state.preset,
-    settings: state.settings,
 });
 
 export default connect(mapStateToProps)(Screen);
