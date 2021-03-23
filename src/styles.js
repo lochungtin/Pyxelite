@@ -150,6 +150,7 @@ export const homeScreenStyles = StyleSheet.create({
     },
     ipInput: {
         color: white,
+        width: 150
     },
     ipInputContainer: {
         ...CenterRowSpaceBetween,

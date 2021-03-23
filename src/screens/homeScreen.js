@@ -31,7 +31,7 @@ class Screen extends React.Component {
                 >
                     <View style={homeScreenStyles.ipInputContainer}>
                         <Icon
-                            color={white}
+                            color={accent}
                             name={'wifi'}
                             size={25}
                         />
@@ -57,14 +57,14 @@ class Screen extends React.Component {
                     width={320}
                 />
                 <Bullet
-                    color={white}
+                    color={accent}
                     icon={'label-outline'}
                     style={homeScreenStyles.displayItem}
                     text={this.props.activity.action}
                     width={320}
                 />
                 <Bullet
-                    color={white}
+                    color={accent}
                     icon={'power'}
                     style={homeScreenStyles.displayItem}
                     text={this.props.power ? 'ON' : 'OFF'}
