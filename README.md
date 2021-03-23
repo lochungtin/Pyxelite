@@ -12,6 +12,10 @@ A desktop version of this application is also under development.
 
 The microcontroller used in this project is an ESP32, but any other device that supports web server hosting would be suitable for this application. The repo and code for the microcontroller can be found here.
 
+# Official Pyxelite Website
+
+For more information about the application, visit the Pyxelite official website. (currently not available)
+
 # Gallery
 
 Screenshots of each section of the mobile app.
@@ -32,7 +36,3 @@ Building from source has only been tested on android devices, but theoretically 
     - ```npm install```
 4. build the app and run on device
     - ```npx react-native run-android```
-
-# Official Pyxelite Website
-
-For more information about the application, visit the Pyxelite official website. (currently not available)
