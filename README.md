@@ -10,7 +10,7 @@ A desktop version of this application is also under development.
 
 # Micro Controller
 
-The microcontroller used in this project is an ESP-01S with an arduino nano / pro micro, but any other device that supports web server hosting would be suitable for this application. The repo and code for the microcontroller can be found here.
+The microcontroller used in this project is an ESP-01S with an arduino nano / pro micro, but any other device that supports web server hosting would be suitable for this application. The repo and code for the microcontroller can be found <a href='https://github.com/lochungtin/PyxeliteController'>here</a>.
 
 # Official Pyxelite Website
 
