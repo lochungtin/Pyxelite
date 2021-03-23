@@ -5,7 +5,6 @@ import React from 'react';
 import FlashMessage from "react-native-flash-message";
 import NavigationBar from 'react-native-navbar-color';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { connect } from 'react-redux';
 
 import colorScreen from '../screens/colorScreen';
 import homeScreen from '../screens/homeScreen';
@@ -16,7 +15,7 @@ import { accent, bgColor, white, } from '../data/color';
 
 const Root = createBottomTabNavigator();
 
-class AppNav extends React.Component {
+export default class AppNav extends React.Component {
 
     componentDidMount = () => NavigationBar.setColor(bgColor);
 
@@ -78,9 +77,3 @@ class AppNav extends React.Component {
         );
     }
 }
-
-const mapStateToProps = state => ({
-
-});
-
-export default connect(mapStateToProps)(AppNav);

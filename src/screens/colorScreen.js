@@ -124,7 +124,7 @@ class Screen extends React.Component {
             g: randomColor[1],
             b: randomColor[2],
             a: 100,
-        })
+        });
     }
 
     save = () => {
@@ -141,8 +141,9 @@ class Screen extends React.Component {
     }
 
     set = () => {
-        if (this.save())
+        if (this.save()) {
             store.dispatch(setActiveColor('#' + this.state.hex));
+        }
     }
 
     render() {
