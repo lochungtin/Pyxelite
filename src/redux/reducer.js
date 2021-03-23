@@ -16,7 +16,7 @@ import { accent } from '../data/color';
 const activityInit = {
     action: 'static',
     brightness: 200,
-    color: accent.substring(1),
+    color: accent,
     speed: 50,
 }
 const updateActivity = (activity = activityInit, action) => {

@@ -60,7 +60,7 @@ class Screen extends React.Component {
                             return (
                                 <View key={RNKey()} style={settingsScreenStyles.presetInnerContainer}>
                                     <TouchableOpacity style={settingsScreenStyles.presetItem}>
-                                        <View style={{ ...settingsScreenStyles.presetColorbar, backgroundColor: '#' + data.color }} />
+                                        <View style={{ ...settingsScreenStyles.presetColorbar, backgroundColor: data.color }} />
                                         <View style={settingsScreenStyles.presetTextContainer}>
                                             <Text style={settingsScreenStyles.presetText}>
                                                 {data.action.toUpperCase()}

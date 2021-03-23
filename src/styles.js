@@ -111,14 +111,6 @@ export const colorScreenStyles = StyleSheet.create({
         textAlign: 'center',
         width: 275
     },
-    hexPreview: {
-        ...CenterCenter,
-        ...BRBorder,
-        backgroundColor: darkGrey,
-        borderRadius: 25,
-        height: 50,
-        width: 275,
-    },
     inputContainer: {
         ...CenterRowSpaceBetween,
         height: 55,

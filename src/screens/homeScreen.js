@@ -18,9 +18,9 @@ class Screen extends React.Component {
             <View style={{ ...generalStyles.screen, ...homeScreenStyles.screen }}>
                 <Logo dim={250} style={homeScreenStyles.logo} />
                 <DisplayItem
-                    color={'#' + this.props.activity.color}
+                    color={this.props.activity.color}
                     icon={'circle'}
-                    text={'#' + this.props.activity.color}
+                    text={this.props.activity.color}
                     title={'COLOR'}
                 />
                 <DisplayItem

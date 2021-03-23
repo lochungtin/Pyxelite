@@ -36,9 +36,9 @@ class Screen extends React.Component {
                         return (
                             <View key={RNKey()} style={libraryScreenStyles.itemContainer}>
                                 <Bullet
-                                    color={'#' + color}
+                                    color={color}
                                     icon={'circle'}
-                                    text={'#' + color.toUpperCase()}
+                                    text={color.toUpperCase()}
                                     width={275}
                                 />
                                 <Bubble 

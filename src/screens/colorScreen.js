@@ -9,8 +9,9 @@ import { store } from '../redux/store';
 
 import { colorScreenStyles, generalStyles, } from '../styles';
 
-import { grey, white, } from '../data/color';
+import { grey, lightGrey, white, } from '../data/color';
 import { hex2Ints, ints2hex, mix, rand, } from '../utils/color';
+import Bullet from '../components/Bullet';
 
 class Screen extends React.Component {
 
@@ -135,13 +136,13 @@ class Screen extends React.Component {
             return false;
         }
 
-        store.dispatch(addColor(this.state.hex));
+        store.dispatch(addColor('#' + this.state.hex));
         return true;
     }
 
     set = () => {
         if (this.save())
-            store.dispatch(setActiveColor(this.state.hex));
+            store.dispatch(setActiveColor('#' + this.state.hex));
     }
 
     render() {
@@ -149,17 +150,17 @@ class Screen extends React.Component {
             <View style={generalStyles.screen}>
                 <TouchableOpacity
                     onPress={this.randomColor}
-                    style={{ ...colorScreenStyles.preview, backgroundColor: '#' + (this.state.hex.length === 6 ? this.state.hex : "333") }}
+                    style={{ ...colorScreenStyles.preview, backgroundColor: '#' + (this.state.hex.length === 6 ? this.state.hex : lightGrey.substring(1)) }}
                 />
                 <View style={colorScreenStyles.inputContainer}>
-                    <View style={colorScreenStyles.hexPreview}>
+                    <Bullet>
                         <TextInput
                             onChangeText={this.handleTextInput}
                             maxLength={6}
                             value={this.state.hex}
                             style={colorScreenStyles.hexInput}
                         />
-                    </View>
+                    </Bullet>
                     <Switch
                         onValueChange={this.handleSwitch}
                         style={colorScreenStyles.switch}
