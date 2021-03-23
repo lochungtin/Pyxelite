@@ -22,9 +22,9 @@ The microcontroller used in this project is an ESP32, but any other device that 
 
 Screenshots of each section of the mobile app.
 
-| COlOR LIBRARY | CONTROL PANEL | HOMEPAGE | RGBA COLOR PICKER |
-|---|---|---|---|
-|<img src='./img/Pyxelite_Library_Page.jpg' />|<img src='./img/Pyxelite_Settings_Page.jpg' />|<img src='./img/Pyxelite_Home_Page.jpg' />|<img src='./img/Pyxelite_Color_Page.jpg' />|
+| COlOR LIBRARY                                 | CONTROL PANEL                                  | HOMEPAGE                                   | RGBA COLOR PICKER                           |
+| --------------------------------------------- | ---------------------------------------------- | ------------------------------------------ | ------------------------------------------- |
+| <img src='./img/Pyxelite_Library_Page.jpg' /> | <img src='./img/Pyxelite_Settings_Page.jpg' /> | <img src='./img/Pyxelite_Home_Page.jpg' /> | <img src='./img/Pyxelite_Color_Page.jpg' /> |
 
 <br />
 
