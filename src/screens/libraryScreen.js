@@ -26,7 +26,7 @@ class Screen extends React.Component {
         return (
             <View style={generalStyles.screen}>
                 <View />
-                <View style={libraryScreenStyles.selectionPanel}>
+                <View style={libraryScreenStyles.titlePanel}>
                     <Text style={libraryScreenStyles.headerText}>
                         COLOR LIBRARY
                     </Text>

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StatusBar, StyleSheet, } from 'react-native';
 
 import { accent, bgColor, darkGrey, grey, lightGrey, white, } from './data/color';
 
@@ -20,6 +20,8 @@ const BRBorder = {
     borderColor: grey,
     borderRightWidth: 3,
 };
+
+const taller = Dimensions.get('screen').height / Dimensions.get('screen').width > 2.12;
 
 export const sliderStyles = StyleSheet.create({
     slider: {
@@ -73,6 +75,7 @@ export const generalStyles = StyleSheet.create({
         backgroundColor: bgColor,
         display: 'flex',
         flex: 1,
+        paddingTop: StatusBar.currentHeight,
     }
 })
 
@@ -122,7 +125,7 @@ export const colorScreenStyles = StyleSheet.create({
         display: 'flex',
         flex: 1,
         marginBottom: 30,
-        marginTop: 70,
+        marginTop: 30,
         width: 350,
     },
     sliderContainer: {
@@ -148,7 +151,7 @@ export const homeScreenStyles = StyleSheet.create({
         display: 'flex',
         flex: 1,
         marginBottom: 10,
-        marginTop: 70,
+        marginTop: 40,
     },
     toggleBtn: {
         backgroundColor: darkGrey,
@@ -171,10 +174,10 @@ export const libraryScreenStyles = StyleSheet.create({
         flex: 1,
         width: 390,
     },
-    selectionPanel: {
+    titlePanel: {
         ...CenterCenter,
         backgroundColor: darkGrey,
-        marginTop: 50,
+        marginTop: 20,
         height: 60,
         width: '100%',
     },
@@ -185,9 +188,23 @@ export const settingsScreenStyles = StyleSheet.create({
         ...CenterRowSpaceBetween,
         width: 360,
     },
+    currentColorBullet: {
+        borderRadius: 10,
+        height: 20,
+        width: 80,
+    },
+    currentColorText: {
+        color: white,
+        fontSize: 20,
+    },
+    midSection: {
+        ...CenterRowSpaceBetween,
+        height: taller ? 120 : 55,
+        width: 280,
+    },
     planItem: {
         ...CenterRowSpaceBetween,
-        marginBottom: 30,
+        marginTop: 15,
         width: 360,
     },
     presetBtn: {
@@ -249,8 +266,12 @@ export const settingsScreenStyles = StyleSheet.create({
         width: 160,
     },
     topControls: {
-        height: 400,
-        marginTop: 60,
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: 300,
+        paddingTop: taller ? 30 : 0,
     },
     verticalText: {
         color: white,

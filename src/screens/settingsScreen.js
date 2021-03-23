@@ -54,6 +54,12 @@ class Screen extends React.Component {
                         );
                     })}
                 </View>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Library')}style={settingsScreenStyles.midSection}>
+                    <Text style={settingsScreenStyles.currentColorText}>
+                        CURRENT COLOR
+                    </Text>
+                    <View style={{...settingsScreenStyles.currentColorBullet, backgroundColor: this.props.activity.color}}/>
+                </TouchableOpacity>
                 <View style={settingsScreenStyles.bottomControls}>
                     <View style={settingsScreenStyles.presetContainer}>
                         {this.props.preset.map((data, index) => {

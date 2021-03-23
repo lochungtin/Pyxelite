@@ -19,9 +19,4 @@ export const plans = [
         icon: 'chevron-triple-right',
         key: 't',
     },
-    {
-        displayName: 'random',
-        icon: 'dice-5-outline',
-        key: 'r',
-    },
 ];
