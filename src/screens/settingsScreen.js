@@ -26,9 +26,7 @@ class Screen extends React.Component {
         store.dispatch(setActiveSpeed(val));
     }
 
-    savePreset = (num, data) => {
-        store.dispatch(setPreset({ num, data }));
-    }
+    savePreset = (num, data) => store.dispatch(setPreset({ num, data }));
 
     setAction = action => {
         store.dispatch(setActiveAction(action));

@@ -2,11 +2,30 @@ import { StyleSheet } from 'react-native';
 
 import { accent, bgColor, darkGrey, grey, lightGrey, white, } from './data/color';
 
+const CenterRowSpaceBetween = {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+};
+
+const CenterCenter = {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+};
+
+const BRBorder = {
+    borderBottomWidth: 3,
+    borderColor: grey,
+    borderRightWidth: 3,
+};
+
 export const sliderStyles = StyleSheet.create({
     slider: {
         alignItems: 'center',
         display: 'flex',
-        flexDirection: 'column',        
+        flexDirection: 'column',
         height: 325,
         justifyContent: 'space-between',
         width: 40,
@@ -34,12 +53,10 @@ export const generalStyles = StyleSheet.create({
         justifyContent: 'center',
     },
     bullet: {
+        ...BRBorder,
         alignItems: 'center',
         backgroundColor: darkGrey,
-        borderBottomWidth: 3,
-        borderColor: grey,
         borderRadius: 25,
-        borderRightWidth: 3,
         display: 'flex',
         flexDirection: 'row',
         height: 50,
@@ -61,37 +78,28 @@ export const generalStyles = StyleSheet.create({
 
 export const colorScreenStyles = StyleSheet.create({
     actionContainer: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+        ...CenterRowSpaceBetween,
         marginBottom: 20,
         marginTop: 30,
-        width: 350,
+        width: 300,
     },
     actionSave: {
-        alignItems: 'center',
+        ...CenterCenter,
+        ...BRBorder,
         backgroundColor: grey,
-        borderBottomWidth: 3,
         borderColor: lightGrey,
         borderRadius: 25,
-        borderRightWidth: 3,
-        display: 'flex',
-        justifyContent: 'center',
         height: 50,
-        width: 100,
+        width: 90,
     },
     actionSet: {
-        alignItems: 'center',
+        ...CenterCenter,
+        ...BRBorder,
         backgroundColor: accent,
-        borderBottomWidth: 3,
         borderColor: lightGrey,
         borderRadius: 25,
-        borderRightWidth: 3,
-        display: 'flex',
-        justifyContent: 'center',
         height: 50,
-        width: 200,
+        width: 190,
     },
     actionText: {
         color: white,
@@ -104,23 +112,16 @@ export const colorScreenStyles = StyleSheet.create({
         width: 275
     },
     hexPreview: {
-        alignItems: 'center',
+        ...CenterCenter,
+        ...BRBorder,
         backgroundColor: darkGrey,
-        borderBottomWidth: 3,
-        borderColor: grey,
         borderRadius: 25,
-        borderRightWidth: 3,
-        display: 'flex',
-        justifyContent: 'center',
         height: 50,
         width: 275,
     },
     inputContainer: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
+        ...CenterRowSpaceBetween,
         height: 55,
-        justifyContent: 'space-between',
         marginBottom: 20,
         width: 350,
     },
@@ -133,10 +134,7 @@ export const colorScreenStyles = StyleSheet.create({
         width: 350,
     },
     sliderContainer: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        ...CenterRowSpaceBetween,
         width: 300,
     },
     switch: {
@@ -157,8 +155,8 @@ export const homeScreenStyles = StyleSheet.create({
     logo: {
         display: 'flex',
         flex: 1,
-        marginTop: 70,
         marginBottom: 10,
+        marginTop: 70,
     },
     toggleBtn: {
         backgroundColor: darkGrey,
@@ -168,10 +166,7 @@ export const homeScreenStyles = StyleSheet.create({
 
 export const libraryScreenStyles = StyleSheet.create({
     itemContainer: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        ...CenterRowSpaceBetween,
         marginTop: 15,
         width: 390,
     },
@@ -185,36 +180,26 @@ export const libraryScreenStyles = StyleSheet.create({
         width: 390,
     },
     selectionPanel: {
-        alignItems: 'center',
+        ...CenterCenter,
         backgroundColor: darkGrey,
-        display: 'flex',
         marginTop: 50,
         height: 60,
-        justifyContent: 'center',
         width: '100%',
     },
 });
 
 export const settingsScreenStyles = StyleSheet.create({
     bottomControls: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        ...CenterRowSpaceBetween,
         width: 360,
     },
     planItem: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        ...CenterRowSpaceBetween,
         marginBottom: 30,
         width: 360,
     },
     presetBtn: {
-        alignItems: 'center',
-        display: 'flex',
-        justifyContent: 'center',
+        ...CenterCenter,
         backgroundColor: darkGrey,
         borderRadius: 10,
         height: 100,
@@ -234,22 +219,17 @@ export const settingsScreenStyles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     presetInnerContainer: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        ...CenterRowSpaceBetween,
         width: 180,
     },
     presetItem: {
+        ...BRBorder,
         alignItems: 'center',
+        backgroundColor: darkGrey,
+        borderRadius: 10,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        backgroundColor: darkGrey,
-        borderRadius: 10,
-        borderBottomWidth: 3,
-        borderColor: grey,
-        borderRightWidth: 3,
         height: 100,
         width: 120,
     },
@@ -261,14 +241,11 @@ export const settingsScreenStyles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         height: 80,
-        justifyContent: 'space-between',        
+        justifyContent: 'space-between',
         marginLeft: 10,
     },
     slider: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        ...CenterRowSpaceBetween,
         width: 70,
     },
     sliderContainer: {
@@ -280,8 +257,8 @@ export const settingsScreenStyles = StyleSheet.create({
         width: 160,
     },
     topControls: {
-        marginTop: 60,
         height: 400,
+        marginTop: 60,
     },
     verticalText: {
         color: white,
