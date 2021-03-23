@@ -6,7 +6,7 @@ Pyxelite is an open source mobile ARGB controller written in React Native for we
 
 The app will be released onto the playstore in the new future.
 
-An desktop version of this application is also under development.
+A desktop version of this application is also under development.
 
 # Micro Controller
 
