@@ -4,11 +4,12 @@ import { showMessage } from "react-native-flash-message";
 import { connect } from 'react-redux';
 
 import ColorSlider from '../components/Slider';
-import { grey, white, } from '../data/color';
 import { addColor, setActiveColor } from '../redux/action';
 import { store } from '../redux/store';
 
 import { colorScreenStyles, generalStyles, } from '../styles';
+
+import { grey, white, } from '../data/color';
 import { hex2Ints, ints2hex, mix, rand, } from '../utils/color';
 
 class Screen extends React.Component {

@@ -1,16 +1,16 @@
 import React from 'react';
-import { ScrollView, Text, TouchableOpacity, View, } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { ScrollView, Text, View, } from 'react-native';
 import { connect } from 'react-redux';
 
+import Bubble from '../components/Bubble';
 import Bullet from '../components/Bullet';
-import { deleteColor, setActiveColor } from '../redux/action';
+import { deleteColor, setActiveColor, } from '../redux/action';
 import { store } from '../redux/store';
 
-import { generalStyles, libraryScreenStyles } from '../styles';
-import { accent, white } from '../data/color';
+import { generalStyles, libraryScreenStyles, } from '../styles';
+
+import { accent } from '../data/color';
 import { RNKey } from '../utils/randomKey';
-import Bubble from '../components/Bubble';
 
 class Screen extends React.Component {
 

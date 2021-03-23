@@ -3,15 +3,16 @@ import { Text, TouchableOpacity, View, } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
+import Bubble from '../components/Bubble';
 import Bullet from '../components/Bullet';
 import Slider from '../components/Slider';
-import { store } from '../redux/store';
 import { setActiveAction, updateBrightness, updateSpeed } from '../redux/action';
+import { store } from '../redux/store';
 
 import { generalStyles, settingsScreenStyles, } from '../styles';
-import { accent, white, } from '../data/color';
+
+import { accent } from '../data/color';
 import { plans } from '../data/plan';
-import Bubble from '../components/Bubble';
 
 class Screen extends React.Component {
 

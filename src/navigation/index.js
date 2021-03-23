@@ -12,7 +12,7 @@ import homeScreen from '../screens/homeScreen';
 import libraryScreen from '../screens/libraryScreen';
 import settingsScreen from '../screens/settingsScreen';
 
-import { accent, bgColor, white } from '../data/color';
+import { accent, bgColor, white, } from '../data/color';
 
 const Root = createBottomTabNavigator();
 

@@ -2,8 +2,9 @@ import React from 'react';
 import { Text, View, } from 'react-native';
 import VerticalSlider from 'rn-vertical-slider';
 
-import { darkGrey, grey, } from '../data/color';
 import { sliderStyles } from '../styles';
+
+import { darkGrey, grey, } from '../data/color';
 
 export default class Slider extends React.Component {
     render() {

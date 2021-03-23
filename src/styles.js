@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { accent, bgColor, darkGrey, grey, lightGrey, white } from './data/color';
+import { accent, bgColor, darkGrey, grey, lightGrey, white, } from './data/color';
 
 export const sliderStyles = StyleSheet.create({
     slider: {
@@ -28,11 +28,8 @@ export const generalStyles = StyleSheet.create({
     bubble: {
         alignItems: 'center',
         backgroundColor: darkGrey,
-        borderRadius: 20,
         display: 'flex',
-        height: 40,
         justifyContent: 'center',
-        width: 40,
     },
     bullet: {
         alignItems: 'center',
@@ -162,28 +159,12 @@ export const homeScreenStyles = StyleSheet.create({
         marginBottom: 10,
     },
     toggleBtn: {
-        alignItems: 'center',
         backgroundColor: darkGrey,
-        borderRadius: 37.5,
-        display: 'flex',
-        height: 75,
-        justifyContent: 'center',
-        marginTop: 20,
-        marginBottom: 20,
-        width: 75,
+        marginVertical: 20,
     },
 });
 
 export const libraryScreenStyles = StyleSheet.create({
-    button: {
-        alignItems: 'center',
-        backgroundColor: darkGrey,
-        borderRadius: 20,
-        display: 'flex',
-        height: 40,
-        justifyContent: 'center',
-        width: 40,
-    },
     itemContainer: {
         alignItems: 'center',
         display: 'flex',
@@ -213,15 +194,6 @@ export const libraryScreenStyles = StyleSheet.create({
 });
 
 export const settingsScreenStyles = StyleSheet.create({
-    planBtn: {
-        alignItems: 'center',
-        backgroundColor: darkGrey,
-        borderRadius: 20,
-        display: 'flex',
-        height: 40,
-        justifyContent: 'center',
-        width: 40,
-    },
     planContainer: {
         alignItems: 'center',
         display: 'flex',
@@ -229,10 +201,6 @@ export const settingsScreenStyles = StyleSheet.create({
         justifyContent: 'space-between',
         marginBottom: 20,
         width: 360,
-    },
-    planText: {
-        color: white,
-        width: 180
     },
     sliderContainer: {
         alignItems: 'center',

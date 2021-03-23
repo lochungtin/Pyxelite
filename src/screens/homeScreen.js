@@ -1,16 +1,16 @@
 import React from 'react';
-import { TouchableOpacity, View, } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 
+import Bubble from '../components/Bubble';
 import DisplayItem from '../components/DisplayItem';
 import Logo from '../components/Logo';
 import { toggle } from '../redux/action';
 import { store } from '../redux/store';
 
-import { accent, white, } from '../data/color';
 import { generalStyles, homeScreenStyles, } from '../styles';
 
+import { accent, white, } from '../data/color';
 
 class Screen extends React.Component {
     render() {
@@ -35,13 +35,14 @@ class Screen extends React.Component {
                     text={this.props.power ? 'ON' : 'OFF'}
                     title={'POWER'}
                 />
-                <TouchableOpacity style={homeScreenStyles.toggleBtn} onPress={() => store.dispatch(toggle())}>
-                    <Icon
-                        color={this.props.power ? accent : white}
-                        name={'power'}
-                        size={50}
-                    />
-                </TouchableOpacity>
+                <Bubble
+                    color={this.props.power ? accent : white}
+                    icon={'power'}
+                    dim={75}
+                    onPress={() => store.dispatch(toggle())}
+                    size={50}
+                    style={homeScreenStyles.toggleBtn}
+                />
             </View>
         );
     }
