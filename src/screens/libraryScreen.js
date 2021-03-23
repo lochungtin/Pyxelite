@@ -3,12 +3,14 @@ import { ScrollView, Text, TouchableOpacity, View, } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
+import Bullet from '../components/Bullet';
 import { deleteColor, setActiveColor } from '../redux/action';
 import { store } from '../redux/store';
 
 import { generalStyles, libraryScreenStyles } from '../styles';
 import { accent, white } from '../data/color';
 import { RNKey } from '../utils/randomKey';
+import Bubble from '../components/Bubble';
 
 class Screen extends React.Component {
 
@@ -33,26 +35,20 @@ class Screen extends React.Component {
                     {this.props.library.map(color => {
                         return (
                             <View key={RNKey()} style={libraryScreenStyles.itemContainer}>
-                                <View style={libraryScreenStyles.bullet}>
-                                    <View style={{ ...libraryScreenStyles.colorLabel, backgroundColor: '#' + color }} />
-                                    <Text style={libraryScreenStyles.colorText}>
-                                        {'#' + color}
-                                    </Text>
-                                </View>
-                                <TouchableOpacity onPress={() => this.setColor(color)} style={libraryScreenStyles.button}>
-                                    <Icon
-                                        color={white}
-                                        name={'check'}
-                                        size={25}
-                                    />
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => this.deleteColor(color)} style={libraryScreenStyles.button}>
-                                    <Icon
-                                        color={white}
-                                        name={'trash-can-outline'}
-                                        size={25}
-                                    />
-                                </TouchableOpacity>
+                                <Bullet
+                                    color={'#' + color}
+                                    icon={'circle'}
+                                    text={'#' + color.toUpperCase()}
+                                    width={275}
+                                />
+                                <Bubble 
+                                    icon={'check'}
+                                    onPress={() => this.setColor(color)}
+                                />
+                                <Bubble 
+                                    icon={'trash-can-outline'}
+                                    onPress={() => this.deleteColor(color)}
+                                />
                             </View>
                         );
                     })}

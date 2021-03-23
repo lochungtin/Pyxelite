@@ -3,13 +3,15 @@ import { Text, TouchableOpacity, View, } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
+import Bullet from '../components/Bullet';
 import Slider from '../components/Slider';
 import { store } from '../redux/store';
-import { updateBrightness, updateSpeed } from '../redux/action';
+import { setActiveAction, updateBrightness, updateSpeed } from '../redux/action';
 
 import { generalStyles, settingsScreenStyles, } from '../styles';
 import { accent, white, } from '../data/color';
 import { plans } from '../data/plan';
+import Bubble from '../components/Bubble';
 
 class Screen extends React.Component {
 
@@ -21,6 +23,10 @@ class Screen extends React.Component {
         store.dispatch(updateSpeed(val));
     }
 
+    setAction = action => {
+        store.dispatch(setActiveAction(action))
+    }
+
     render() {
         return (
             <View style={generalStyles.screen}>
@@ -28,23 +34,16 @@ class Screen extends React.Component {
                 {plans.map(plan => {
                     return (
                         <View key={plan.key} style={settingsScreenStyles.planContainer}>
-                            <View style={settingsScreenStyles.planBullet}>
-                                <Icon
-                                    color={accent}
-                                    name={plan.icon}
-                                    size={25}
-                                />
-                                <Text style={settingsScreenStyles.planText}>
-                                    {plan.displayName.toUpperCase()}
-                                </Text>
-                            </View>
-                            <TouchableOpacity style={settingsScreenStyles.planBtn}>
-                                <Icon
-                                    color={white}
-                                    name={'check'}
-                                    size={20}
-                                />
-                            </TouchableOpacity>
+                            <Bullet
+                                color={accent}
+                                icon={plan.icon}
+                                text={plan.displayName}
+                                width={300}
+                            />
+                            <Bubble 
+                                icon={'check'}
+                                onPress={() => this.setAction(plan.displayName)}
+                            />
                         </View>
                     );
                 })}

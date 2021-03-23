@@ -25,6 +25,33 @@ export const sliderStyles = StyleSheet.create({
 });
 
 export const generalStyles = StyleSheet.create({
+    bubble: {
+        alignItems: 'center',
+        backgroundColor: darkGrey,
+        borderRadius: 20,
+        display: 'flex',
+        height: 40,
+        justifyContent: 'center',
+        width: 40,
+    },
+    bullet: {
+        alignItems: 'center',
+        backgroundColor: darkGrey,
+        borderBottomWidth: 3,
+        borderColor: grey,
+        borderRadius: 25,
+        borderRightWidth: 3,
+        display: 'flex',
+        flexDirection: 'row',
+        height: 50,
+    },
+    bulletIcon: {
+        marginLeft: 20,
+    },
+    bulletText: {
+        color: white,
+        marginLeft: 40,
+    },
     screen: {
         alignItems: 'center',
         backgroundColor: bgColor,
@@ -119,29 +146,14 @@ export const colorScreenStyles = StyleSheet.create({
 });
 
 export const homeScreenStyles = StyleSheet.create({
-    bullet: {
-        alignItems: 'center',
-        backgroundColor: darkGrey,
-        borderBottomWidth: 3,
-        borderColor: grey,
-        borderRadius: 25,
-        borderRightWidth: 3,
-        display: 'flex',
-        flexDirection: 'row',
-        height: 50,
-        justifyContent: 'space-around',
-        marginBottom: 20,
-        width: 300,
-    },
+    displayItem: {
+        marginVertical: 12,
+    },  
     displayTitle: {
         color: white,
         fontSize: 15,
         marginBottom: 5,
         paddingLeft: 20,
-    },
-    displayValue: {
-        color: white,
-        width: 200,
     },
     logo: {
         display: 'flex',
@@ -163,19 +175,6 @@ export const homeScreenStyles = StyleSheet.create({
 });
 
 export const libraryScreenStyles = StyleSheet.create({
-    bullet: {
-        alignItems: 'center',
-        display: 'flex',
-        backgroundColor: darkGrey,
-        borderBottomWidth: 3,
-        borderColor: grey,
-        borderRadius: 25,
-        borderRightWidth: 3,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        height: 50,
-        width: 275,
-    },
     button: {
         alignItems: 'center',
         backgroundColor: darkGrey,
@@ -184,16 +183,6 @@ export const libraryScreenStyles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         width: 40,
-    },
-    colorLabel: {
-        borderRadius: 10,
-        height: 20,
-        marginLeft: 20,
-        width: 80,
-    },
-    colorText: {
-        color: lightGrey,
-        marginRight: 60,
     },
     itemContainer: {
         alignItems: 'center',
@@ -224,19 +213,6 @@ export const libraryScreenStyles = StyleSheet.create({
 });
 
 export const settingsScreenStyles = StyleSheet.create({
-    planBullet: {
-        alignItems: 'center',
-        backgroundColor: darkGrey,
-        borderBottomWidth: 3,
-        borderColor: grey,
-        borderRadius: 25,
-        borderRightWidth: 3,
-        display: 'flex',
-        flexDirection: 'row',
-        height: 50,
-        justifyContent: 'space-around',
-        width: 300,
-    },
     planBtn: {
         alignItems: 'center',
         backgroundColor: darkGrey,
@@ -262,6 +238,7 @@ export const settingsScreenStyles = StyleSheet.create({
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        width: 120,
     },
 });

@@ -1,6 +1,14 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COLOR, DELETE_COLOR, SET_ACTIVE_ACTION, SET_ACTIVE_COLOR, TOGGLE, UPDATE_BRIGHTNESS, UPDATE_SPEED, } from './action';
+import {
+    ADD_COLOR,
+    DELETE_COLOR,
+    SET_ACTIVE_ACTION,
+    SET_ACTIVE_COLOR,
+    TOGGLE,
+    UPDATE_BRIGHTNESS,
+    UPDATE_SPEED,
+} from './action';
 
 import { accent } from '../data/color';
 
@@ -47,7 +55,7 @@ const settingsInit = {
     speed: 50,
 }
 const updateSettings = (settings = settingsInit, action) => {
-    let update = {...settings};
+    let update = { ...settings };
     switch (action.type) {
         case UPDATE_BRIGHTNESS:
             update.brightness = action.payload;

@@ -20,20 +20,20 @@ class Screen extends React.Component {
                 <DisplayItem
                     color={'#' + this.props.activity.color}
                     icon={'circle'}
+                    text={'#' + this.props.activity.color}
                     title={'COLOR'}
-                    value={'#' + this.props.activity.color}
                 />
                 <DisplayItem
                     color={white}
                     icon={'label-outline'}
+                    text={this.props.activity.action}
                     title={'ACTION'}
-                    value={'test'}
                 />
                 <DisplayItem
                     color={white}
                     icon={'power'}
+                    text={this.props.power ? 'ON' : 'OFF'}
                     title={'POWER'}
-                    value={this.props.power ? 'ON' : 'OFF'}
                 />
                 <TouchableOpacity style={homeScreenStyles.toggleBtn} onPress={() => store.dispatch(toggle())}>
                     <Icon
