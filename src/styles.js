@@ -76,9 +76,10 @@ export const colorScreenStyles = StyleSheet.create({
     },
     preview: {
         borderRadius: 10,
+        display: 'flex',
+        flex: 1,
         marginBottom: 30,
         marginTop: 70,
-        height: 200,
         width: 350,
     },
     slider: {
@@ -138,6 +139,8 @@ export const homeScreenStyles = StyleSheet.create({
         width: 200,
     },
     logo: {
+        display: 'flex',
+        flex: 1,
         marginTop: 70,
         marginBottom: 10,
     },
@@ -149,6 +152,7 @@ export const homeScreenStyles = StyleSheet.create({
         height: 75,
         justifyContent: 'center',
         marginTop: 20,
+        marginBottom: 20,
         width: 75,
     },
 });
@@ -199,7 +203,8 @@ export const libraryScreenStyles = StyleSheet.create({
         fontSize: 20
     },
     scrollView: {
-        height: 500,
+        display: 'flex',
+        flex: 1,
         width: 390,
     },
     selectionPanel: {

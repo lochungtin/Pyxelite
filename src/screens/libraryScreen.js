@@ -14,7 +14,7 @@ class Screen extends React.Component {
 
     deleteColor = color => {
         if (this.props.activity.color === color)
-            this.setColor(accent.substring(1));
+            this.setColor(accent.substring(1).toUpperCase());
         store.dispatch(deleteColor(color))
     }
 
