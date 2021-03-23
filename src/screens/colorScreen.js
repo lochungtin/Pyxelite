@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Text, TextInput, TouchableOpacity, View, } from 'react-native';
-import { showMessage } from "react-native-flash-message";
+import { showMessage } from 'react-native-flash-message';
 import { connect } from 'react-redux';
 
 import ColorSlider from '../components/Slider';

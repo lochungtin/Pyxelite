@@ -72,7 +72,7 @@ export default class AppNav extends React.Component {
                     <Root.Screen name='Home' component={homeScreen} />
                     <Root.Screen name='Color' component={colorScreen} />
                 </Root.Navigator>
-                <FlashMessage position='top'/>
+                <FlashMessage position='center' />
             </NavigationContainer>
         );
     }

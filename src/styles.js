@@ -126,6 +126,7 @@ export const colorScreenStyles = StyleSheet.create({
         flex: 1,
         marginBottom: 30,
         marginTop: 30,
+        minHeight: 200,
         width: 350,
     },
     sliderContainer: {
@@ -147,11 +148,21 @@ export const homeScreenStyles = StyleSheet.create({
         marginBottom: 5,
         paddingLeft: 20,
     },
+    ipInput: {
+        color: white,
+    },
+    ipInputContainer: {
+        ...CenterRowSpaceBetween,
+        paddingLeft: 20,
+        paddingRight: 10,
+        width: 320,
+    },
     logo: {
         display: 'flex',
         flex: 1,
         marginBottom: 10,
         marginTop: 40,
+        minHeight: 300,
     },
     toggleBtn: {
         backgroundColor: darkGrey,

@@ -44,3 +44,9 @@ export const setActiveSpeed = payload => ({
     type: SET_ACTIVE_SPEED,
     payload,
 });
+
+export const SET_IP = 'SET_IP';
+export const setIP = payload => ({
+    type: SET_IP,
+    payload,
+});

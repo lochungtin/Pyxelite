@@ -7,6 +7,7 @@ import {
     SET_ACTIVE_BRIGHTNESS,
     SET_ACTIVE_COLOR,
     SET_ACTIVE_SPEED,
+    SET_IP,
     SET_PRESET,
     TOGGLE,
 } from './action';
@@ -42,6 +43,8 @@ const updateActivity = (activity = activityInit, action) => {
             return activity;
     }
 }
+
+const updateIP = (ip = '', action) => action.type === SET_IP ? action.payload : ip;
 
 const updateLibrary = (library = [], action) => {
     let update = [...library];
@@ -92,6 +95,7 @@ const updatePreset = (preset = presetInit, action) => {
 
 export default combineReducers({
     activity: updateActivity,
+    ip: updateIP,
     library: updateLibrary,
     power: updatePower,
     preset: updatePreset,
