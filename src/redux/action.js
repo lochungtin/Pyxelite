@@ -27,6 +27,12 @@ export const setActiveAction = payload => ({
     payload,
 });
 
+export const SET_PRESET = 'SET_PRESET';
+export const setPreset = payload => ({
+    type: SET_PRESET,
+    payload,
+});
+
 export const UPDATE_BRIGHTNESS = 'UPDATE_BRIGHTNESS';
 export const updateBrightness = payload => ({
     type: UPDATE_BRIGHTNESS,

@@ -6,7 +6,9 @@ export const sliderStyles = StyleSheet.create({
     slider: {
         alignItems: 'center',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column',        
+        height: 325,
+        justifyContent: 'space-between',
         width: 40,
     },
     sliderText: {
@@ -145,7 +147,7 @@ export const colorScreenStyles = StyleSheet.create({
 export const homeScreenStyles = StyleSheet.create({
     displayItem: {
         marginVertical: 12,
-    },  
+    },
     displayTitle: {
         color: white,
         fontSize: 15,
@@ -194,19 +196,96 @@ export const libraryScreenStyles = StyleSheet.create({
 });
 
 export const settingsScreenStyles = StyleSheet.create({
-    planContainer: {
+    bottomControls: {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 20,
         width: 360,
     },
-    sliderContainer: {
+    planItem: {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginBottom: 30,
+        width: 360,
+    },
+    presetBtn: {
+        alignItems: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: darkGrey,
+        borderRadius: 10,
+        height: 100,
+        width: 40,
+    },
+    presetColorbar: {
+        borderRadius: 5,
+        height: 80,
+        marginHorizontal: 10,
+        width: 10,
+    },
+    presetContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        height: 325,
+        justifyContent: 'space-between',
+    },
+    presetInnerContainer: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: 180,
+    },
+    presetItem: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        backgroundColor: darkGrey,
+        borderRadius: 10,
+        borderBottomWidth: 3,
+        borderColor: grey,
+        borderRightWidth: 3,
+        height: 100,
         width: 120,
     },
+    presetText: {
+        color: white,
+    },
+    presetTextContainer: {
+        alignItems: 'flex-start',
+        display: 'flex',
+        flexDirection: 'column',
+        height: 80,
+        justifyContent: 'space-between',        
+        marginLeft: 10,
+    },
+    slider: {
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: 70,
+    },
+    sliderContainer: {
+        alignItems: 'flex-start',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        height: 325,
+        width: 160,
+    },
+    topControls: {
+        marginTop: 60,
+        height: 400,
+    },
+    verticalText: {
+        color: white,
+        transform: [{ rotate: '90deg' }, { translateY: 80 }],
+        width: 200,
+    }
 });

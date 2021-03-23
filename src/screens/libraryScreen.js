@@ -9,7 +9,7 @@ import { store } from '../redux/store';
 
 import { generalStyles, libraryScreenStyles, } from '../styles';
 
-import { accent } from '../data/color';
+import { accent, white } from '../data/color';
 import { RNKey } from '../utils/randomKey';
 
 class Screen extends React.Component {
@@ -42,6 +42,7 @@ class Screen extends React.Component {
                                     width={275}
                                 />
                                 <Bubble 
+                                    color={this.props.activity.color === color ? accent : white}
                                     icon={'check'}
                                     onPress={() => this.setColor(color)}
                                 />

@@ -5,6 +5,7 @@ import {
     DELETE_COLOR,
     SET_ACTIVE_ACTION,
     SET_ACTIVE_COLOR,
+    SET_PRESET,
     TOGGLE,
     UPDATE_BRIGHTNESS,
     UPDATE_SPEED,
@@ -13,7 +14,7 @@ import {
 import { accent } from '../data/color';
 
 const activityInit = {
-    action: 'test',
+    action: 'static',
     color: accent.substring(1),
 }
 const updateActivity = (activity = activityInit, action) => {
@@ -50,6 +51,35 @@ const updateLibrary = (library = [], action) => {
 
 const updatePower = (on = false, action) => action.type === TOGGLE ? !on : on;
 
+const presetInit = [
+    {
+        name: 'Preset 1',
+        color: accent,
+        speed: 50,
+        brightness: 200,
+    },
+    {
+        name: 'Preset 2',
+        color: accent,
+        speed: 50,
+        brightness: 200,
+    },
+    {
+        name: 'Preset 3',
+        color: accent,
+        speed: 50,
+        brightness: 200,
+    }
+]
+const updatePreset = (preset = presetInit, action) => {
+    let update = [...preset];
+    if (action.type === SET_PRESET) {
+        update[action.payload.num] = action.payload.preset;
+        return update;
+    }
+    return preset
+}
+
 const settingsInit = {
     brightness: 200,
     speed: 50,
@@ -74,5 +104,6 @@ export default combineReducers({
     activity: updateActivity,
     library: updateLibrary,
     power: updatePower,
+    preset: updatePreset,
     settings: updateSettings,
 });
