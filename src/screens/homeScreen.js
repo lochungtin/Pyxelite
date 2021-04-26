@@ -21,7 +21,11 @@ class Screen extends React.Component {
 
     tryConnect = () => axios
         .get(`http://${this.props.ip}/ping`)
-        .then(() => {})
+        .then(() => showMessage({
+            description: 'Connection to server established',
+            message: 'Success',
+            type: 'success',
+        }))
         .catch(() => showMessage({
             description: 'Unable to reach server',
             message: 'Error',
