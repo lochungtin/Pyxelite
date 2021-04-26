@@ -131,7 +131,8 @@ class Screen extends React.Component {
     save = () => {
         if (this.state.hex.length !== 6) {
             showMessage({
-                message: 'HEX code is not valid',
+                description: 'HEX code is not valid',
+                message: 'Error',
                 type: 'danger',
             });
             return false;
@@ -142,14 +143,17 @@ class Screen extends React.Component {
     }
 
     set = () => {
+        const payload = '#' + this.state.hex;
         if (this.save()) {
-            store.dispatch(setActiveColor('#' + this.state.hex));
+            store.dispatch(setActiveColor(payload));
             axios
-                .post(`http://${this.props.ip}/color`, {
-                    payload: color,
-                })
-                .then(() => console.log('received'))
-                .catch(() => console.log('timeout?'));
+                .post(`http://${this.props.ip}/color`, { payload })
+                .then(() => {})
+                .catch(() => showMessage({
+                    description: 'Unable to set color',
+                    message: 'Error',
+                    type: 'danger',
+                }));
         }
     }
 

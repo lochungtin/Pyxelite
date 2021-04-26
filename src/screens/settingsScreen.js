@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { Text, TouchableOpacity, View, } from 'react-native';
+import { showMessage } from 'react-native-flash-message';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
@@ -31,19 +32,31 @@ class Screen extends React.Component {
             .post(`http://${this.props.ip}/action`, {
                 payload: action,
             })
-            .then(() => console.log('received'))
-            .catch((err) => console.log(JSON.stringify(err)));
+            .then(() => {})
+            .catch(() => showMessage({
+                description: 'Unable to set action',
+                message: 'Error',
+                type: 'danger',
+            }));
     }
 
     setBrightness = payload => axios
         .post(`http://${this.props.ip}/gamma`, { payload })
-        .then(() => console.log('received'))
-        .catch(() => console.log('err'));
+        .then(() => {})
+        .catch(() => showMessage({
+            description: 'Unable to set brightness',
+            message: 'Error',
+            type: 'danger',
+        }));
 
     setSpeed = payload => axios
         .post(`http://${this.props.ip}/speed`, { payload })
-        .then(() => console.log('received'))
-        .catch(() => console.log('err'));
+        .then(() => {})
+        .catch(() => showMessage({
+            description: 'Unable to set speed',
+            message: 'Error',
+            type: 'danger',
+        }));
 
     usePreset = data => axios
         .post(`http://${this.props.ip}/config`, {
@@ -52,8 +65,12 @@ class Screen extends React.Component {
             speed: data.speed,
             gamma: data.brightness,
         })
-        .then(() => console.log('received'))
-        .catch(() => console.log('err'));
+        .then(() => {})
+        .catch(() => showMessage({
+            description: 'Unable to use preset',
+            message: 'Error',
+            type: 'danger',
+        }));
 
     render() {
         return (

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { ScrollView, Text, View, } from 'react-native';
+import { showMessage } from 'react-native-flash-message';
 import { connect } from 'react-redux';
 
 import Bubble from '../components/Bubble';
@@ -21,14 +22,16 @@ class Screen extends React.Component {
         store.dispatch(deleteColor(color));
     }
 
-    setColor = color => {
-        store.dispatch(setActiveColor(color));
+    setColor = payload => {
+        store.dispatch(setActiveColor(payload));
         axios
-            .post(`http://${this.props.ip}/color`, {
-                payload: color,
-            })
-            .then(() => console.log('received'))
-            .catch(() => console.log('timeout?'));
+            .post(`http://${this.props.ip}/color`, { payload })
+            .then(() => {})
+            .catch(() => showMessage({
+                description: 'Unable to set color',
+                message: 'Error',
+                type: 'danger',
+            }));
     }
 
     render() {

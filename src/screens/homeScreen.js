@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { TextInput, View } from 'react-native';
+import { showMessage } from 'react-native-flash-message';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { connect } from 'react-redux';
 
@@ -20,15 +21,23 @@ class Screen extends React.Component {
 
     tryConnect = () => axios
         .get(`http://${this.props.ip}/ping`)
-        .then(() => console.log("pong"))
-        .catch(() => console.log("err"));
+        .then(() => {})
+        .catch(() => showMessage({
+            description: 'Unable to reach server',
+            message: 'Error',
+            type: 'danger',
+        }));
 
     toggleLights = () => {
         store.dispatch(toggle());
         axios
             .get(`http://${this.props.ip}/${this.props.power ? 'off' : 'on'}`)
-            .then(() => console.log("toggled"))
-            .catch(() => console.log("err"));
+            .then(() => {})
+            .catch(() => showMessage({
+                description: 'Unable to toggle lights',
+                message: 'Error',
+                type: 'danger',
+            }));
     }
 
     render() {
