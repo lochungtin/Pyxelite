@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import Bubble from '../components/Bubble';
 import Bullet from '../components/Bullet';
 import Slider from '../components/Slider';
-import { setActiveAction, setActiveBrightness, setActiveSpeed, setPreset, } from '../redux/action';
+import { setActiveAction, setActiveBrightness, setActiveColor, setActiveSpeed, setPreset, } from '../redux/action';
 import { store } from '../redux/store';
 
 import { generalStyles, settingsScreenStyles, } from '../styles';
@@ -32,7 +32,7 @@ class Screen extends React.Component {
             .post(`http://${this.props.ip}/action`, {
                 payload: action,
             })
-            .then(() => {})
+            .then(() => { })
             .catch(() => showMessage({
                 description: 'Unable to set action',
                 message: 'Error',
@@ -42,7 +42,7 @@ class Screen extends React.Component {
 
     setBrightness = payload => axios
         .post(`http://${this.props.ip}/gamma`, { payload })
-        .then(() => {})
+        .then(() => { })
         .catch(() => showMessage({
             description: 'Unable to set brightness',
             message: 'Error',
@@ -51,26 +51,32 @@ class Screen extends React.Component {
 
     setSpeed = payload => axios
         .post(`http://${this.props.ip}/speed`, { payload })
-        .then(() => {})
+        .then(() => { })
         .catch(() => showMessage({
             description: 'Unable to set speed',
             message: 'Error',
             type: 'danger',
         }));
 
-    usePreset = data => axios
-        .post(`http://${this.props.ip}/config`, {
-            color: data.color,
-            action: data.action,
-            speed: data.speed,
-            gamma: data.brightness,
-        })
-        .then(() => {})
-        .catch(() => showMessage({
-            description: 'Unable to use preset',
-            message: 'Error',
-            type: 'danger',
-        }));
+    usePreset = data => {
+        store.dispatch(setActiveAction(data.action));
+        store.dispatch(setActiveBrightness(data.brightness));
+        store.dispatch(setActiveColor(data.color));
+        store.dispatch(setActiveSpeed(data.speed));
+        axios
+            .post(`http://${this.props.ip}/config`, {
+                color: data.color,
+                action: data.action,
+                speed: data.speed,
+                gamma: data.brightness,
+            })
+            .then(() => { })
+            .catch(() => showMessage({
+                description: 'Unable to use preset',
+                message: 'Error',
+                type: 'danger',
+            }));
+    }
 
     render() {
         return (
