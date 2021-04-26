@@ -21,6 +21,7 @@ export default class Slider extends React.Component {
                     minimumTrackTintColor={grey}
                     min={0}
                     onChange={this.props.onValueChange}
+                    onComplete={this.props.onComplete}
                     step={1}
                     value={this.props.value}
                     width={40}

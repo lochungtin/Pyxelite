@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { ScrollView, Text, View, } from 'react-native';
 import { connect } from 'react-redux';
@@ -17,10 +18,18 @@ class Screen extends React.Component {
     deleteColor = color => {
         if (this.props.activity.color === color)
             this.setColor(accent.substring(1).toUpperCase());
-        store.dispatch(deleteColor(color))
+        store.dispatch(deleteColor(color));
     }
 
-    setColor = color => store.dispatch(setActiveColor(color));
+    setColor = color => {
+        store.dispatch(setActiveColor(color));
+        axios
+            .post(`http://${this.props.ip}/color`, {
+                payload: color,
+            })
+            .then(() => console.log('received'))
+            .catch(() => console.log('timeout?'));
+    }
 
     render() {
         return (
@@ -41,12 +50,12 @@ class Screen extends React.Component {
                                     text={color.toUpperCase()}
                                     width={275}
                                 />
-                                <Bubble 
+                                <Bubble
                                     color={this.props.activity.color === color ? accent : white}
                                     icon={'check'}
                                     onPress={() => this.setColor(color)}
                                 />
-                                <Bubble 
+                                <Bubble
                                     icon={'trash-can-outline'}
                                     onPress={() => this.deleteColor(color)}
                                 />
@@ -61,6 +70,7 @@ class Screen extends React.Component {
 
 const mapStateToProps = state => ({
     activity: state.activity,
+    ip: state.ip,
     library: state.library,
 });
 

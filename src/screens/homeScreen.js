@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { TextInput, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -17,8 +18,17 @@ class Screen extends React.Component {
 
     handleTextChange = text => store.dispatch(setIP(text));
 
-    tryConnect = () => {
-        
+    tryConnect = () => axios
+        .get(`http://${this.props.ip}/ping`)
+        .then(() => console.log("pong"))
+        .catch(() => console.log("err"));
+
+    toggleLights = () => {
+        store.dispatch(toggle());
+        axios
+            .get(`http://${this.props.ip}/${this.props.power ? 'off' : 'on'}`)
+            .then(() => console.log("toggled"))
+            .catch(() => console.log("err"));
     }
 
     render() {
@@ -74,7 +84,7 @@ class Screen extends React.Component {
                     color={this.props.power ? accent : white}
                     icon={'power'}
                     dim={75}
-                    onPress={() => store.dispatch(toggle())}
+                    onPress={this.toggleLights}
                     size={50}
                     style={homeScreenStyles.toggleBtn}
                 />

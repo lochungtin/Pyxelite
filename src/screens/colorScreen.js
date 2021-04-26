@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { Switch, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { showMessage } from 'react-native-flash-message';
@@ -143,6 +144,12 @@ class Screen extends React.Component {
     set = () => {
         if (this.save()) {
             store.dispatch(setActiveColor('#' + this.state.hex));
+            axios
+                .post(`http://${this.props.ip}/color`, {
+                    payload: color,
+                })
+                .then(() => console.log('received'))
+                .catch(() => console.log('timeout?'));
         }
     }
 
@@ -213,6 +220,7 @@ class Screen extends React.Component {
 }
 
 const mapStateToProps = state => ({
+    ip: state.ip,
     library: state.library,
 });
 
