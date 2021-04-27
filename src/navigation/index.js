@@ -16,8 +16,6 @@ const Root = createBottomTabNavigator();
 
 export default class AppNav extends React.Component {
 
-    componentDidMount = () => NavigationBar.setColor(bgColor);
-
     tabIcons = ({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
             let name = '';
