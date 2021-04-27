@@ -4,19 +4,17 @@
 
 Pyxelite is an open source mobile ARGB controller written in React Native for web server based ARGB microcontrollers.
 
-The app will be released onto the playstore in the new future.
+This project is currently in alpha and only available for android, support for iOS and desktop are currently under development. The latest stable release apk can be found <a href='https://github.com/lochungtin/Pyxelite/releases'>here</a>.
 
-A desktop version of this application is also under development.
+## Micro Controller
 
-# Micro Controller
+The microcontroller used in this project is an ESP32, but any other device that supports web server hosting would be suitable for this application. The repo and code for the microcontroller can be found <a href='https://github.com/lochungtin/ESPyxelite'>here</a>.
 
-The microcontroller used in this project is an ESP-01S with an arduino nano / pro micro, but any other device that supports web server hosting would be suitable for this application. The repo and code for the microcontroller can be found <a href='https://github.com/lochungtin/PyxeliteController'>here</a>.
-
-# Official Pyxelite Website
+## Official Pyxelite Website
 
 For more information about the application, visit the Pyxelite official website. (currently not available)
 
-# Gallery
+## Gallery
 
 Screenshots of each section of the mobile app.
 
@@ -24,7 +22,7 @@ Screenshots of each section of the mobile app.
 | --------------------------------------------- | ---------------------------------------------- | ------------------------------------------ | ------------------------------------------- |
 | <img src='./img/Pyxelite_Library_Page.jpg' /> | <img src='./img/Pyxelite_Settings_Page.jpg' /> | <img src='./img/Pyxelite_Home_Page.jpg' /> | <img src='./img/Pyxelite_Color_Page.jpg' /> |
 
-# Building From Source
+## Building From Source
 
 Building from source has only been tested on android devices, but theoretically it should be also available on iOS as react native supports both operating systems.
 
@@ -36,3 +34,11 @@ Building from source has only been tested on android devices, but theoretically 
     - ```npm install```
 4. build the app and run on device
     - ```npx react-native run-android```
+
+## Future Plans
+
+1. Release on Google Play Store
+
+2. IOS release
+
+3. Desktop application 
