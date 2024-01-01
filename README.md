@@ -1,5 +1,5 @@
 
-<img src="./img/icons.png" width="80">
+<img src="./img/icon.png" width="80">
 
 # Pyxelite
 
