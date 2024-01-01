@@ -12,7 +12,7 @@ ESPyxelite is the micro controller uni section of project Pyxelite. As the name 
 
 ## Web Service Based Controlling
 
-**RESTful** architecture is used to interact with the mobile application. The ESP32 hosts a web server with a few endpoints to connect to, on each *PUT* request, the internal data of the ESP32 updates, and the LED sequence updates accordingly.
+**RESTful** architecture is used to interact with the mobile application. The ESP32 hosts a web server with a few endpoints to connect to, on each _PUT_ request, the internal data of the ESP32 updates, and the LED sequence updates accordingly.
 
 ## Limitations and Future Work
 

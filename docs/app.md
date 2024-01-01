@@ -8,9 +8,9 @@
 
 ## About
 
-|||
-|:--:|:--|
-|![img](./img/home.jpg ":size=70%")|Pyxelite is an open source mobile ARGB controller written in React Native for the ARGB microcontroller, which is the other part of the project.|
+|                                    |                                                                                                                                                 |
+| :--------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![img](./img/home.jpg ':size=70%') | Pyxelite is an open source mobile ARGB controller written in React Native for the ARGB microcontroller, which is the other part of the project. |
 
 This project is currently in alpha and only available for android, support for desktop support is planned while iOS currently has no intention of being support. The latest stable release apk can be found [Here](https://github.com/lochungtin/Pyxelite/releases/download/v1.0.0-alpha/Pyxelite-AlphaV1.0.0.apk).
 
@@ -18,9 +18,9 @@ This project is currently in alpha and only available for android, support for d
 
 ### Basic Control and Animations
 
-|||
-|:--:|:--|
-|![img](./img/settings.jpg ":size=70%")|There are currently 4 supported animations in the app and the MCU, they are: **Static (default)**, **Breathe**, **Wave**, and **Travel**|
+|                                        |                                                                                                                                          |
+| :------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| ![img](./img/settings.jpg ':size=70%') | There are currently 4 supported animations in the app and the MCU, they are: **Static (default)**, **Breathe**, **Wave**, and **Travel** |
 
 ### Custom Brightness and Motion Speed
 
