@@ -4,7 +4,7 @@
 
 </div>
 
-# Pyxelite
+# Pyxelite [(Github)](https://github.com/lochungtin/Pyxelite)
 
 ## Background Motivations
 
@@ -18,9 +18,9 @@ The app is written in React Native and the **RESTful API** requests are handled 
 
 ### Features
 
-- Basic Control and Animations  
-- Custom Brightness and Motion Speed
-- Custom Colours and Colour Library
+-   Basic Control and Animations
+-   Custom Brightness and Motion Speed
+-   Custom Colours and Colour Library
 
 ## Micro Controller Unit
 
