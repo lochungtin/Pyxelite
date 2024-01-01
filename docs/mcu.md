@@ -1,3 +1,9 @@
+<div style="text-align:center">
+
+![icon](img/icon.png ':size=25%')
+
+</div>
+
 # Micro Controller Unit
 
 ## About
